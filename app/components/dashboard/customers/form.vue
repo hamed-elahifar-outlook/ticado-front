@@ -289,7 +289,7 @@ const isSectionSelected = (sectionId: string) => {
         <!-- Access Sections -->
         <div class="space-y-3">
             <Label>{{ $t('customers.form.access_permissions') }}</Label>
-            <div class="grid grid-cols-3 gap-3">
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
             <div v-for="section in sections" :key="section.id" 
             class="flex items-center gap-3 border border-gray-200 rounded-lg p-1 cursor-pointer hover:bg-gray-50">
                 <UiInputCheckBox 

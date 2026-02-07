@@ -8,8 +8,7 @@
         @click="$emit('change-tab', item.id)"
     >
         <component v-if="item.icon" :is="item.icon" class="size-4" />
-        <span v-if="item.label">{{ item.label }}</span>
-        <span v-else>{{ $t(item.title) }}</span>
+        <span class="hidden lg:block">{{ $t(item.title) }}</span>
         <span v-if="item.value" class="text-xs bg-secondary px-2 py-0.5 rounded">{{ item.value }}</span>
     </button>
   </div>

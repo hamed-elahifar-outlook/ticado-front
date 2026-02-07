@@ -1,5 +1,5 @@
 <template>
-	<section class="flex min-h-screen items-center justify-center bg-muted/40 px-4 py-12">
+	<section class="flex flex-col gap-6 min-h-screen items-center bg-muted/40 px-4 py-12">
 		<Card class="w-full max-w-md rounded-xl border border-border bg-card text-card-foreground shadow-lg">
 			<CardHeader class="space-y-2 p-6!">
 				<CardTitle class="text-3xl font-semibold tracking-tight text-foreground">
@@ -71,14 +71,19 @@
 						/>
 					</div>
 
-					<Button 
-                    @click.prevent="createUser"
-                    :disabled="isLoading"
-                    class="mt-6 h-11 w-full bg-primary text-primary-foreground cursor-pointer shadow hover:bg-primary/90 
-                    focus-visible:ring-ring disabled:opacity-50 disabled:cursor-not-allowed">
-						<p v-if="!isLoading">{{ $t('common.create_account') }}</p>
-                        <UiLoadingSpinner v-else />
-					</Button>
+					<div class="flex gap-x-2 items-center h-11">
+						<Button 
+						@click.prevent="createUser"
+						:disabled="isLoading"
+						class="bg-primary text-primary-foreground cursor-pointer shadow hover:bg-primary/90 
+						focus-visible:ring-ring disabled:opacity-50 disabled:cursor-not-allowed">
+							<p v-if="!isLoading">{{ $t('common.create_account') }}</p>
+							<UiLoadingSpinner v-else />
+						</Button>
+						<Button variant="outline" @click="$router.back()">
+							{{ $t('edit_popup.cancel') }}
+						</Button>
+					</div>
 				</form>
 			</CardContent>
 		</Card>
@@ -98,6 +103,7 @@ import Label from '~/components/ui/label/Label.vue';
 import Input from '~/components/ui/input/Input.vue';
 import Button from '~/components/ui/button/Button.vue';
 import { useClientFetch } from '~/composables/useClientFetch'
+import { ArrowRight } from 'lucide-vue-next';
 
 const router = useRouter()
 

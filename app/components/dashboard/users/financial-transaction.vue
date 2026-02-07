@@ -1,7 +1,7 @@
 <template>
   <div class="bg-white rounded-lg shadow p-6">
     <!-- Header -->
-    <div class="flex items-center justify-between mb-6">
+    <div class="flex flex-col md:flex-row gap-y-2 items-center justify-between mb-6">
       <div class="flex items-center gap-2">
         <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
@@ -17,9 +17,7 @@
           v-model="searchQuery"
           class="px-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
-        <svg class="absolute right-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-        </svg>
+        <Search class="absolute right-3 rtl:right-auto rtl:left-3 top-2.5 w-5 h-5 text-gray-400"/>
       </div>
     </div>
 
@@ -74,6 +72,7 @@
 </template>
 
 <script setup lang="ts">
+import { Search } from 'lucide-vue-next'
 import { ref, computed } from 'vue'
 
 interface Transaction {

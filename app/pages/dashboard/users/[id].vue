@@ -6,7 +6,7 @@
           <NuxtLink to="/dashboard/user-managment">
             
             <UiButton variant="ghost" class="font-bold">
-                <ArrowRight />
+                <ArrowRight class="ltr:rotate-180" />
                 بازگشت به لیست کاربران
             </UiButton>
             </NuxtLink>
@@ -15,10 +15,6 @@
     </div>
     <DashboardUsersCard />
     <DashboardUsersTabAble @changeTab="(p) => tabSelected = p" :selected-item="tabSelected" />
-      <!-- <DashboardUsersUserInfo />
-      <DashboardUsersGiftsSection />
-      <DashboardUsersFinancialTransaction />
-      <DashboardUsersTicketSection /> -->
       <Transition name="fade-slide" mode="out-in">
         <component
           :is="tabSelected === 'user_information' ? userInfo

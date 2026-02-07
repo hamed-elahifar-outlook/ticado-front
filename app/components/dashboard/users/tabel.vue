@@ -13,7 +13,7 @@
             </TableHeader>
             <TableBody>
                 <TableRow v-for="user in users.data" :key="user._id">
-                    <TableCell v-for="head in headData" :key="head" style="unicode-bidi: plaintext;" class="text-right">
+                    <TableCell v-for="head in headData" :key="head" style="unicode-bidi: plaintext;" class="rtl:text-right">
                         <nuxt-link :to="head == 'name' ? `/dashboard/users/${user._id}` : ''" 
                         :class="{'hover:text-primary transition-all': head == 'name'}">
                             {{head == 'id' ? user._id : user[head]}}
