@@ -1,0 +1,20 @@
+.dialog-overlay-enter-active,
+.dialog-overlay-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.dialog-overlay-enter-from,
+.dialog-overlay-leave-to {
+  opacity: 0;
+}
+
+.dialog-content-enter-active,
+.dialog-content-leave-active {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dialog-content-enter-from,
+.dialog-content-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -48%);
+}
